@@ -1,2 +1,2 @@
 #!/bin/bash
-NUM=NUM.2f
+echo NUM=0.2f
