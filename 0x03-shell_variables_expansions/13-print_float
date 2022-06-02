@@ -1,2 +1,2 @@
 #!/bin/bash
-echo NUM | tail -2
+printf NUM.2f &(echo "$float/NUM" | bc -l)
