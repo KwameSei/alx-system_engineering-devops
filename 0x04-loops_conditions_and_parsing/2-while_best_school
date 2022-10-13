@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Writing to terminal 10 time the test "Best School" using while loop.
+
+count=0
+while (( count < 10 ))
+do
+	echo "Best School"
+	count=$(( count+1 ))
+done
