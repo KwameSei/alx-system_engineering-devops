@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+date=`date +%d-%m-%Y`
+filename="backup.sql"
+user='root'
+pass='NATSEIKWA510'
+
+#sudo mysql
+#SET PASSWORD FOR 'root'@'localhost' = PASSWORD('NATSEIKWA510');
+#exit
+
+mysqldump sudo -u "$user" --password="$1" --all-databases > "$filename"
+tar -zcvf "$date.tar.gz" "$filename"
+sudo rm -v "$filename"
+echo "Database compression completed"
