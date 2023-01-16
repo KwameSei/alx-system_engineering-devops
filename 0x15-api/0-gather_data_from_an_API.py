@@ -11,9 +11,9 @@ Base_url = 'https://jsonplaceholder.typicode.com'
 
 
 if __name__ == "__main__":
-    user = requests.get(f'{Base_url}/users/{argv[1]}').json()
-    todos = requests.get(f'\
-            {Base_url}/todos', params={'userId': argv[1]}).json()
+    user = requests.get('{}/users/{}'.format(Base_url, argv[1])).json()
+    todos = requests.get('\
+            {}/todos'.format(Base_url), params={'userId': argv[1]}).json()
 
     total_tasks = len(todos)
     completed = 0
@@ -23,9 +23,9 @@ if __name__ == "__main__":
         if todo['completed']:
             completed += 1
             completed_tasks.append(todo["title"])
-    output = f'Employee {user["name"]} is done with tasks \
-            ({completed}/{total_tasks}): '
+    output = 'Employee {} is done with tasks \
+            ({}/{}): '.format(user["name"], completed, total_tasks)
 
     print(output)
     for task in completed_tasks:
-        print(f'\t {task}')
+        print('\t {}'.format(task))
