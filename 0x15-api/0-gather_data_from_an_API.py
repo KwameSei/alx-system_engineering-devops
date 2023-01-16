@@ -2,9 +2,11 @@ import requests
 from sys import argv
 """Gathering information from an API"""
 
+
 if __name__ == '__main__':
     Base_url = 'https://jsonplaceholder.typicode.com'
     # Getting user by putting user id from the command line
+
     user = requests.get(f'{Base_url}/users/{argv[1]}').json()
     todos = requests.get(f'\
             {Base_url}/todos', params={'userId': argv[1]}).json()
