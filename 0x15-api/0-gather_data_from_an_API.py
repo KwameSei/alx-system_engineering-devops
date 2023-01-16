@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """
-    Gathering information from an API
+Gathering information from an API
 """
-import requests
 from sys import argv
+import requests
+
 
 if __name__ == "__main__":
     Base_url = 'https://jsonplaceholder.typicode.com'
