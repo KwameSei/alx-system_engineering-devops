@@ -1,9 +1,11 @@
 #!/usr/bin/python3
+"""
+    Gathering information from an API
+"""
 import requests
 from sys import argv
-"""Gathering information from an API"""
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     Base_url = 'https://jsonplaceholder.typicode.com'
     # Getting user by putting user id from the command line
 
