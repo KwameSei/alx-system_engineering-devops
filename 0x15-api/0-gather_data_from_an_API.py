@@ -6,11 +6,10 @@ import requests
 from sys import argv
 
 
-Base_url = 'https://jsonplaceholder.typicode.com'
-"""REST API url"""
-
-
 if __name__ == "__main__":
+    Base_url = 'https://jsonplaceholder.typicode.com'
+    """REST API url"""
+
     user = requests.get('{}/users/{}'.format(Base_url, argv[1])).json()
     todos = requests.get('\
             {}/todos'.format(Base_url), params={'userId': argv[1]}).json()
