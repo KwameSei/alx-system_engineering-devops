@@ -18,8 +18,8 @@ if __name__ == "__main__":
 
     with open('{}.csv'.format(argv[1]), 'w', encoding='utf8') as f:
 
-        writer = csv.writer(f, delimiter=',', quotechar='\
-                "', quoting=csv.QUOTE_ALL)
+        writer = csv.writer(f, delimiter=',', quotechar='"',
+                            quoting=csv.QUOTE_ALL)
 
         for todo in todos:
             writer.writerow(['{}'.format(argv[1]), '{}'.format(user['name']),
