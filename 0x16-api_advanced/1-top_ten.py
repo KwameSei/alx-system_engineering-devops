@@ -6,12 +6,12 @@ Using reddit's API
 import requests
 
 
-def number_of_subscribers(subreddit):
+def top_ten(subreddit):
     """returning top ten post titles"""
     headers = {'User-Agent': 'api_advanced-project'}
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
     parameters = {'limit': 10}
-    res = requests.get(url, params=parameter, headers=headers,
+    res = requests.get(url, params=parameters, headers=headers,
                        allow_redirects=False)
 
     if res.status_code == 200:
