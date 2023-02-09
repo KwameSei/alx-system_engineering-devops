@@ -1,0 +1,16 @@
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        server_name nathanielosei.tech www.nathanielosei.tech
+
+        root /var/www/html/index.html;
+        index index.html index.htm index.nginx-debian,html;
+
+        add_header X-Served-By $hostname;
+        #return 301 $scheme://www.nathanielosei.tech$request_uri;
+
+        location /airbnb-onepage/ {
+                include proxy_params;
+                proxy_pass http://0.0.0.0:5000/airbnb-onepage/;
+        }
+}
